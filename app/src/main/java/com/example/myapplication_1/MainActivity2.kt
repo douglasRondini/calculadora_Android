@@ -33,26 +33,30 @@ class MainActivity2 : AppCompatActivity() {
 
     }
 
-    fun verificaLogin () : Boolean {
-        val nome = txt_nome?.text.toString()
+    private fun removeSpace (checkLoginParameter: String): String {
+        return checkLoginParameter.trim()
+
+    }
+
+    private fun checkLogin (): Boolean {
+        val nome = removeSpace(txt_nome?.text.toString())
         val senha = txt_senha?.text.toString()
 
         if (nome == "douglas" && senha == "123") {
             return true
-        }else {
+        } else {
             return false
         }
     }
-
-    fun clickBotao () {
+    private fun clickBotao () {
         btn_login?.setOnClickListener {
             var checaLogin = false
-            checaLogin = verificaLogin()
+            checaLogin = checkLogin()
 
-            if (checaLogin == true){
+            if (checaLogin){
                 Toast.makeText(this,"Usuario Correto", Toast.LENGTH_LONG).show()
 
-            }else{
+            } else {
                 Toast.makeText(this,"Usuario Incorreto", Toast.LENGTH_SHORT).show()
             }
 
