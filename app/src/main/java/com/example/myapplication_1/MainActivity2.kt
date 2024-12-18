@@ -1,6 +1,7 @@
 package com.example.myapplication_1
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -48,6 +49,13 @@ class MainActivity2 : AppCompatActivity() {
             return false
         }
     }
+
+    private fun goHomeScreen() {
+        val goHome = Intent(this, HomeActivity::class.java)
+        startActivity(goHome)
+
+    }
+
     private fun clickBotao () {
         btn_login?.setOnClickListener {
             var checaLogin = false
@@ -55,6 +63,7 @@ class MainActivity2 : AppCompatActivity() {
 
             if (checaLogin){
                 Toast.makeText(this,"Usuario Correto", Toast.LENGTH_LONG).show()
+                goHomeScreen()
 
             } else {
                 Toast.makeText(this,"Usuario Incorreto", Toast.LENGTH_SHORT).show()
