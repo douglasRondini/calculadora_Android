@@ -3,4 +3,9 @@
     <string name="nome_login">Nome</string>
     <string name="senha_login">Senha</string>
     <string name="button_login">Login</string>
+    //string da tla home
+    <string name="hint_number_1">Digite um numero</string>
+    <string name="hint_number_2">Digite um numero</string>
+
+
 </resources>
