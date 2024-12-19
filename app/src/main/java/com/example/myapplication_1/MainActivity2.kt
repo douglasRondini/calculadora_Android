@@ -58,8 +58,11 @@ class MainActivity2 : AppCompatActivity() {
 
     private fun clickBotao () {
         btn_login?.setOnClickListener {
-            var checaLogin = false
-            checaLogin = checkLogin()
+            if(checkEmpty()) {
+                showMessengen("Preencha todos os campos")
+                return@setOnClickListener
+            }
+            val checaLogin: Boolean = checkLogin()
 
             if (checaLogin){
                 Toast.makeText(this,"Usuario Correto", Toast.LENGTH_LONG).show()
@@ -70,5 +73,16 @@ class MainActivity2 : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun checkEmpty (): Boolean {
+        if (txt_nome?.text.toString().isEmpty() || txt_senha?.text.toString().isEmpty()) {
+            return true
+        }
+        return false
+    }
+
+    private fun showMessengen(messageToShow: String) {
+        Toast.makeText(this, messageToShow, Toast.LENGTH_SHORT).show()
     }
 }
