@@ -2,6 +2,7 @@ package com.example.myapplication_1
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class HomeActivity : AppCompatActivity() {
     private var btn_sum : Button? = null
+    private var txt_view1 :  TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,12 +23,13 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
         btn_sum = findViewById(R.id.btn_sum)
+        txt_view1 = findViewById(R.id.txt_view1)
         clickOperationButtons()
     }
 
     private fun clickOperationButtons() {
         btn_sum?.setOnClickListener {
-            mensagem("Você selecionou somar")
+            txt_view1?.text = "Você selecionou somar"
         }
     }
 
